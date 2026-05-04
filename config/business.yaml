@@ -1,0 +1,26 @@
+# Configuración del negocio — Generado por AgentKit
+negocio:
+  nombre: "Eventízalo"
+  descripcion: "Servicio de alquiler de equipos premium para eventos en Valencia y Castellón. Ofrecemos Fotomatón Premium, Plataforma 360°, Disco Móvil Profesional, Cabina Vogue y Alfombra de Humo para bodas, cumpleaños, fiestas de 18 años, eventos corporativos y comuniones."
+  horario: "Lunes a viernes de 8:00 a 23:00 · Sábados y domingos de 10:00 a 22:00"
+  telefono: "+34623010542"
+  email: "hola@eventizalo.es"
+  web: "https://eventizalo.es"
+  zona: "Valencia y Castellón (Comunidad Valenciana)"
+
+agente:
+  nombre: "Aura"
+  tono: "amigable y casual"
+  casos_de_uso:
+    - "Responder preguntas frecuentes sobre servicios y precios"
+    - "Chatear con clientes interesados y calificar leads"
+    - "Agendar citas y gestionar reservas"
+    - "Registrar leads automáticamente en el sistema"
+    - "Crear eventos en el panel de administración cuando se confirma una reserva"
+    - "Seguimiento post-venta automático antes del evento"
+
+metadata:
+  creado: "2026-05-03"
+  version: "1.0"
+  modelo_ia: "claude-haiku-4-5-20251001"
+  proveedor_whatsapp: "twilio"
