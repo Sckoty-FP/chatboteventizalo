@@ -34,8 +34,13 @@ app = FastAPI(title="Aura — Agente WhatsApp de Eventízalo", version="1.0.0", 
 
 
 @app.get("/")
-async def health_check():
+async def root():
     return {"status": "ok", "agente": "Aura", "negocio": "Eventízalo"}
+
+
+@app.get("/health")
+async def health_check():
+    return {"status": "ok"}
 
 
 @app.get("/webhook")
