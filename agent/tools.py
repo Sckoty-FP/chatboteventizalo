@@ -246,6 +246,17 @@ def crear_evento(
             "notas": notas,
         }
 
+        # Deduplicación: evitar crear el mismo evento dos veces
+        existente = sb.from_("evento").select("id_evento").eq(
+            "fecha_evento", fecha_evento
+        ).eq("id_cliente", id_cliente).eq("tipo_evento", tipo_evento).in_(
+            "estado", ["pendiente", "confirmado"]
+        ).execute()
+        if existente.data:
+            id_existente = existente.data[0]["id_evento"]
+            logger.warning(f"Evento duplicado bloqueado — ya existe id={id_existente}")
+            return {"exito": True, "id_evento": id_existente, "mensaje": f"El evento ya estaba registrado (ID: {id_existente})"}
+
         res = sb.from_("evento").insert(payload).execute()
         if not res.data:
             return {"exito": False, "id_evento": None, "mensaje": "Error al crear el evento"}
